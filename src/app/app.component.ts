@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 //Firebase
 import { GoogleAuthProvider,FacebookAuthProvider,TwitterAuthProvider} from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AmazonLoginProvider, SocialAuthService } from '@abacritt/angularx-social-login';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 export class AppComponent {
   title = 'AngularSocialLoginFirebase';
 
-  constructor(public afAuth: AngularFireAuth){} // Inject firebase auth service
+  constructor(public afAuth: AngularFireAuth, private authServiceSSO:SocialAuthService){} // Inject firebase auth service
 
   // Sign in with Google
   GoogleAuth() {
@@ -26,6 +27,15 @@ export class AppComponent {
   //Sign in with Twitter
   TwitterAuth(){
     return this.AuthLogin(new TwitterAuthProvider());
+  }
+
+  // Sign in with Amazon
+  AmazonAuth(){
+    this.authServiceSSO.signIn(AmazonLoginProvider.PROVIDER_ID).then((res)=>{
+      // this.runAuthStateSubscribeWorkFlow();
+      console.log('response---',res);
+      
+    })
   }
 
     // Auth logic to run auth providers

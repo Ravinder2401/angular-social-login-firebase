@@ -43,3 +43,33 @@
 
 ================================================================================================
 ================================================================================================
+
+4. Amazon Login
+    - Create the developer Account on Amazon for single sign-on.
+ 	    https://developer.amazon.com/
+    - Setup Your Single sign-on Auth Provider: Get Amazon App ID
+        https://developer.amazon.com/loginwithamazon/console/site/lwa/overview.html
+    - you need to click on the Create a Security Profile button
+
+    - Create a New Security Profile in (login with amazon console)
+    - Now type the Security Profile Name, Security Profile Description, and a Consent Privacy   Notice URL for your app, and then click on the save button.
+
+    - Security Profile -> General Setting
+        Security Profile Name	-> My amazaon app
+        Security Profile Description	-> my amazon app
+        Security Profile ID	-> amzn1.application.61ab880dafe145eb9d5a7368e32cdecb
+        Consent Privacy Notice URL 	-> https://saptarishis.net/privacy-policy
+
+    - Security Profile -> Web Setting
+        Client ID	-> amzn1.application-oa2-client.aa619cab40ad482c8b7846a850d4b190
+        Client Secret ->
+            amzn1.oa2-cs.v1.9f25270df96c52d9c1c3360538dfbf0836459e4e4543b9803f412a3abcb3bed6
+        Allowed Origins ->  https://saptarishis.net/
+                            http://localhost:4200/
+        Allowed Return URLs -> https://saptarishis.net/
+
+    - Use client id as provider in app.module.ts file provider setting.
+    - Last use (@abacritt/angularx-social-login) package to implement the login functionality.
+
+================================================================================================
+================================================================================================
