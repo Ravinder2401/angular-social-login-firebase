@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 //Firebase
-import { GoogleAuthProvider,FacebookAuthProvider} from 'firebase/auth';
+import { GoogleAuthProvider,FacebookAuthProvider,TwitterAuthProvider} from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
@@ -21,6 +21,11 @@ export class AppComponent {
   // Sign in with Facebook
   FacebookAuth() {
     return this.AuthLogin(new FacebookAuthProvider());
+  }
+
+  //Sign in with Twitter
+  TwitterAuth(){
+    return this.AuthLogin(new TwitterAuthProvider());
   }
 
     // Auth logic to run auth providers

@@ -1,17 +1,22 @@
+================================================================================================
+================================================================================================
+
 1. Google Login Using Firebase
-- Setting up firebase configuration in environment.ts file.
-- Go to firebase console - Authentication - Sign-In-Method and then enable Google sign in       providers.
-- Install these two npm packages for firebase setup.
-    - npm install @angular/fire
-    - npm install firebase
-- In app.module.ts file imports these two lines :
-    - import { AngularFireModule } from '@angular/fire/compat';
-    - import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
+    - Setting up firebase configuration in environment.ts file.
+    - Go to firebase console - Authentication - Sign-In-Method and then enable Google sign in     providers.
+    - Install these two npm packages for firebase setup.
+        - npm install @angular/fire
+        - npm install firebase
+    - In app.module.ts file imports these two lines :
+        - import { AngularFireModule } from '@angular/fire/compat';
+        - import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 ================================================================================================
 ================================================================================================
 
 2. Facebook login
+
     - First, Go to developer.facebook.com and login with your facebook account.
     - Then Go to CREATE APP option - OTHER - BUSINESS - , write your application name and create app.
     - By following the above two steps we get Facebook App id and secret key that we used to add them on firebase authentication setup for enable facebook login with firebase.
@@ -19,3 +24,22 @@
     - Then copy the secret key from firebase and paste it on FACEBOOK LOGIN / SETTINGS/ VALID OAuth Redirect URIs .
     - For this you have to add product Facebook Login in your app in developer.facebook.com .
     - Make sure your app is in Development Mode.
+
+================================================================================================
+================================================================================================
+
+3. Twitter login
+
+    - Go to https://developer.twitter.com/en and then login with your twitter account credentials.
+    - Go to Developer Portal / Projects and apps / Default product
+    - Generate Api Key and Secret.
+    - Configure the user authentication settings
+    - Set App permissions to Read
+    - Enable request email from users.
+    - Choose Type of app -  ( Web App, Automated App or Bot )
+    - Enter call back url in ( App info ) that we are getting from firebase when we enable twitter login settings in it.
+    - Enter your website URL, Terms and services and Privacy Policy 
+    - Then Save the changes.
+
+================================================================================================
+================================================================================================
