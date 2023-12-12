@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 //Firebase
-import { GoogleAuthProvider} from 'firebase/auth';
+import { GoogleAuthProvider,FacebookAuthProvider} from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
@@ -18,12 +18,17 @@ export class AppComponent {
     return this.AuthLogin(new GoogleAuthProvider());
   }
 
+  // Sign in with Facebook
+  FacebookAuth() {
+    return this.AuthLogin(new FacebookAuthProvider());
+  }
+
     // Auth logic to run auth providers
   AuthLogin(provider:any) {
     return this.afAuth
     .signInWithPopup(provider)
     .then((result) => {
-    console.log('You have been successfully logged in!');
+    console.log(`You have been successfully logged in with ${provider}`);
     console.log(result.additionalUserInfo?.profile);
     })
     .catch((error) => {
