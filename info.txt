@@ -1,0 +1,9 @@
+1. Google Login Using Firebase
+- Setting up firebase configuration in environment.ts file.
+- Go to firebase console - Authentication - Sign-In-Method and then enable Google sign in       providers.
+- Install these two npm packages for firebase setup.
+    - npm install @angular/fire
+    - npm install firebase
+- In app.module.ts file imports these two lines :
+    - import { AngularFireModule } from '@angular/fire/compat';
+    - import { AngularFireAuthModule } from '@angular/fire/compat/auth';
